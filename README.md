@@ -65,12 +65,43 @@ Ensure that you have installed Android Studio or Visual Studio Code with Flutter
 3. Deploy backend services if required (e.g., Flask/Django for AI processing).
 
 
-## Expected Output and Technical Details
+## Expected Output
 - AI recommends health-related videos based on user preferences and activity.
 - Video content is fetched using APIs and displayed interactively.
 - Users receive text-to-speech summaries of video content.
 - Firebase Remote Config is used to update AI parameters dynamically.
 - The app supports offline functionality with local data caching.
+
+## Technical Details
+ Tech Stack & Frameworks
+ 
+        Frontend (Mobile & Web App)
+        
+        Flutter (for cross-platform mobile development)
+        HTML/CSS (for web-based dashboard)
+        
+        Backend
+        
+        Firebase Authentication (for user authentication)
+        
+        Database & Storage
+        
+        Firebase Firestore (real-time sync for user data)
+        Hive database
+        
+        AI & Machine Learning
+        
+        TensorFlow.js (for in-browser AI processing)
+        Scikit-learn & Pandas (Python backend) (for data analytics)
+        
+        APIs & Integrations
+        
+        Wearable Device APIs (Google Fit / Apple HealthKit) (for collecting health metrics)
+        YouTube API (for fetching recommended health videos)
+        Firebase Remote Config (for dynamically updating AI parameters)
+        
+       
+
 
 ## Additional Requirements & Considerations
 - Ensure AI model integration is optimized for mobile inference.
