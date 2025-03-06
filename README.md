@@ -73,32 +73,12 @@ Ensure that you have installed Android Studio or Visual Studio Code with Flutter
 - The app supports offline functionality with local data caching.
 
 # Technical Details
- Tech Stack & Frameworks
  
-        Frontend (Mobile & Web App)
-                
-                Flutter (for cross-platform mobile development)
-                HTML/CSS (for web-based dashboard)
-        
-        Backend
-        
-                Firebase Authentication (for user authentication)
-        
-        Database & Storage
-        
-                Firebase Firestore (real-time sync for user data)
-                Hive database
-        
-        AI & Machine Learning
-        
-                TensorFlow.js (for in-browser AI processing)
-                Scikit-learn & Pandas (Python backend) (for data analytics)
-        
-        APIs & Integrations
-                
-                Wearable Device APIs (Google Fit / Apple HealthKit) (for collecting health metrics)
-                YouTube API (for fetching recommended health videos)
-                Firebase Remote Config (for dynamically updating AI parameters)
+- **Frontend**: Flutter framework
+- **Backend**: Firebase 
+- **Database**: Hive and Firestore
+- **AI/ML**: TensorFlow, Scikit-learn
+- **API**: Youtube API,FastAPI/Flask
                 
        
 
