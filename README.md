@@ -80,6 +80,83 @@ Ensure that you have installed Android Studio or Visual Studio Code with Flutter
 
 
 
+# HealthEd - AI-Powered Personalized Health Education Website
+
+## Overview
+
+HealthEd is an AI-driven platform designed to provide personalized health insights and educational content based on user data such as activity, diet, and sleep. The platform consists of both a website and a mobile application, ensuring accessibility and ease of use for users.
+
+## Features
+
+- **Personalized Health Insights**: AI analyzes user data to provide tailored health recommendations.
+- **Educational Content**: Access articles, videos, and interactive sessions on various health topics.
+- **User Dashboard**: Track health progress, set goals, and view analytics.
+- **AI Chatbot**: Get instant health-related answers and guidance.
+- **Community Support**: Engage in forums and discussions with health experts and other users.
+
+## Technologies Used
+
+- **Frontend**: HTML, CSS, JavaScript, React.js
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **AI/ML**: TensorFlow.js, OpenAI API
+- **Authentication**: Firebase Authentication
+- **Hosting**: Vercel / AWS
+
+## Installation & Setup
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js
+- npm / yarn
+- MongoDB (if running locally)
+
+### Steps to Run Locally
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Ashw1n2005/SyntaxSquad.git
+   cd HealthEd
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+3. Set up environment variables:
+   - Create a `.env` file in the root directory.
+   - Add required credentials (e.g., API keys, database URL).
+
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+
+## Contribution
+
+We welcome contributions! Follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```sh
+   git checkout -b feature-name
+   ```
+3. Commit changes and push to your fork.
+4. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+
+
+
+
+
 
 
 
