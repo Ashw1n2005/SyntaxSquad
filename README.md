@@ -72,34 +72,34 @@ Ensure that you have installed Android Studio or Visual Studio Code with Flutter
 - Firebase Remote Config is used to update AI parameters dynamically.
 - The app supports offline functionality with local data caching.
 
-## Technical Details
+# Technical Details
  Tech Stack & Frameworks
  
         Frontend (Mobile & Web App)
-        
-        Flutter (for cross-platform mobile development)
-        HTML/CSS (for web-based dashboard)
+                
+                Flutter (for cross-platform mobile development)
+                HTML/CSS (for web-based dashboard)
         
         Backend
         
-        Firebase Authentication (for user authentication)
+                Firebase Authentication (for user authentication)
         
         Database & Storage
         
-        Firebase Firestore (real-time sync for user data)
-        Hive database
+                Firebase Firestore (real-time sync for user data)
+                Hive database
         
         AI & Machine Learning
         
-        TensorFlow.js (for in-browser AI processing)
-        Scikit-learn & Pandas (Python backend) (for data analytics)
+                TensorFlow.js (for in-browser AI processing)
+                Scikit-learn & Pandas (Python backend) (for data analytics)
         
         APIs & Integrations
-        
-        Wearable Device APIs (Google Fit / Apple HealthKit) (for collecting health metrics)
-        YouTube API (for fetching recommended health videos)
-        Firebase Remote Config (for dynamically updating AI parameters)
-        
+                
+                Wearable Device APIs (Google Fit / Apple HealthKit) (for collecting health metrics)
+                YouTube API (for fetching recommended health videos)
+                Firebase Remote Config (for dynamically updating AI parameters)
+                
        
 
 
@@ -107,6 +107,12 @@ Ensure that you have installed Android Studio or Visual Studio Code with Flutter
 - Ensure AI model integration is optimized for mobile inference.
 - Implement user authentication if personalized recommendations are needed.
 - Ensure compliance with data privacy regulations for handling health-related data.
+
+
+
+
+
+
 
 
 
