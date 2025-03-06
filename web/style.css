@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: #f5f8fb;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.row {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg');
+    background-attachment: fixed;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    float: left;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.main-nav li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.main-nav li a:hover {
+    background-color: #1599d6;
+    border-radius: 20px;
+}
+
+.main-text h1 {
+    font-size: 4rem;
+    color: #fff;
+    font-family: cursive;
+    margin-bottom: 150px;
+    animation: fadeInDown 1.5s ease;
+}
+.main-text-2 h1 {
+    font-size: 4rem;
+    color: #fff;
+    font-family: cursive;
+    margin-bottom: 5px;
+    animation: fadeInDown 1.5s ease;
+}
+
+.main-text-3 h1 {
+    font-size: 4rem;
+    color: #fff;
+    margin-right: 70%;
+    font-family: cursive;
+    margin-bottom: 5px;
+    animation: fadeInDown 1.5s ease;
+}
+
+.main-text p {
+    font-size: 1.2rem;
+    color: #eee;
+    line-height: 1.8;
+    max-width: 800px;
+    animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Page Styles */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 90vh;
+    padding: 50px;
+    background: #f2f9fc;
+}
+
+.about-content {
+    width: 60%;
+    padding-right: 30px;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.about-logo {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-logo img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+/* About Us Text over background */
+.about-text {
+    max-width: 1200px;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background for readability */
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.8;
+    border-radius: 20px;
+    animation: fadeInUp 1.5s ease;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .about-content, .about-logo {
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-content {
+        margin-bottom: 30px;
+    }
+
+    .main-nav {
+        float: none;
+        text-align: center;
+    }
+
+    .main-nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav {
+        position: relative;
+        padding: 10px 0;
+    }
+}

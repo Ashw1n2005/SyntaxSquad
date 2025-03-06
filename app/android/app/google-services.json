@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "168873893476",
+    "project_id": "healthed-2fc02",
+    "storage_bucket": "healthed-2fc02.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168873893476:android:a12520fb652f405bf2c971",
+        "android_client_info": {
+          "package_name": "com.example.healthEd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAWnSciOI0O4dVyn8917F7ehnFnJ12o0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

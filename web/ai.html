@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthEd Chatbot</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .chat-container {
+      width: 100%;
+      max-width: 500px;
+      height: 85vh;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .header {
+      background: #007bff;
+      color: white;
+      padding: 15px;
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      background: #f9f9f9;
+    }
+
+    .message {
+      margin: 12px 0;
+      padding: 14px 20px;
+      border-radius: 25px;
+      max-width: 80%;
+      display: flex;
+      align-items: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .message img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .user {
+      background: #007bff;
+      color: #fff;
+      margin-left: auto;
+      flex-direction: row-reverse;
+    }
+
+    .bot {
+      background: #ececec;
+      color: #333;
+      margin-right: auto;
+    }
+
+    .input-box {
+      padding: 10px;
+      display: flex;
+      border-top: 1px solid #ddd;
+      background: #fff;
+      position: relative;
+    }
+
+    input {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      border-radius: 10px;
+      background: #f0f0f0;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 14px 20px;
+      border: none;
+      background: #007bff;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .typing-indicator {
+      font-style: italic;
+      color: #555;
+      font-size: 14px;
+      padding-left: 20px;
+      padding-bottom: 10px;
+      display: none;
+    }
+
+    .suggestions {
+      position: absolute;
+      bottom: 60px;
+      left: 10px;
+      right: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      display: none;
+      z-index: 1;
+    }
+
+    .suggestion-item {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .suggestion-item:hover {
+      background: #f0f0f0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="header">🤖 HealthEd Chatbot</div>
+  <div class="chat-box" id="chatBox"></div>
+  <div class="typing-indicator" id="typingIndicator">Bot is typing...</div>
+  <div class="input-box">
+    <input type="text" id="userInput" placeholder="Ask me about your health..." autocomplete="off" oninput="showSuggestions()">
+    <button onclick="sendMessage()">Send</button>
+    <div class="suggestions" id="suggestionsBox"></div>
+  </div>
+</div>
+
+<script>
+const healthAnswers = {
+  "What is the normal body temperature for a healthy human?": "The normal body temperature is around 98.6°F (37°C).",
+  "Which vitamin is essential for strong bones and teeth?": "Vitamin D is essential for strong bones and teeth.",
+  "What is the primary function of red blood cells?": "Red blood cells carry oxygen from the lungs to the rest of the body.",
+  "Which organ is responsible for filtering toxins from the blood?": "The liver is responsible for filtering toxins from the blood.",
+  "How much water should an average adult drink daily?": "About 2 to 3 liters of water is recommended daily for an average adult.",
+  "What disease is caused by a deficiency of iron in the body?": "Anemia is caused by iron deficiency.",
+  "Which virus causes COVID-19?": "COVID-19 is caused by the SARS-CoV-2 virus.",
+  "What is the most common symptom of high blood pressure?": "High blood pressure often has no symptoms, which is why it's called the 'silent killer'.",
+  "Which disease is known as the 'silent killer'?": "Hypertension (high blood pressure) is known as the 'silent killer'.",
+  "What type of diabetes is primarily caused by insulin resistance?": "Type 2 diabetes is primarily caused by insulin resistance.",
+  "Which nutrient is the main source of energy for the body?": "Carbohydrates are the main source of energy for the body.",
+  "What is the healthiest type of fat?": "Unsaturated fats are considered the healthiest type of fat.",
+  "Which mineral is essential for strong teeth and prevents cavities?": "Fluoride helps keep teeth strong and prevents cavities.",
+  "Which vitamin is known as the 'sunshine vitamin'?": "Vitamin D is known as the 'sunshine vitamin'.",
+  "What is the primary benefit of dietary fiber?": "Dietary fiber helps with digestion and prevents constipation.",
+  "What is the recommended amount of moderate exercise per week for adults?": "At least 150 minutes of moderate exercise per week is recommended.",
+  "Which type of exercise is best for heart health?": "Aerobic exercises like walking, jogging, and cycling are best for heart health.",
+  "How many hours of sleep does an adult need for optimal health?": "Adults need about 7-9 hours of sleep each night.",
+  "Which hormone is known as the 'stress hormone'?": "Cortisol is known as the 'stress hormone'."
+};
+
+const healthQuestions = Object.keys(healthAnswers);
+
+function findAnswer(question) {
+  return healthAnswers[question] || "I'm sorry, I don't have an answer to that question.";
+}
+
+function sendMessage() {
+  const input = document.getElementById('userInput');
+  const message = input.value.trim();
+  if (!message) return;
+
+  addMessage(message, 'user');
+  input.value = '';
+  showTyping(true);
+  document.getElementById('suggestionsBox').style.display = 'none';
+
+  setTimeout(() => {
+    const reply = findAnswer(message);
+    addMessage(reply, 'bot');
+    showTyping(false);
+  }, 1000);
+}
+
+function addMessage(text, sender) {
+  const chatBox = document.getElementById('chatBox');
+  const msg = document.createElement('div');
+  msg.className = `message ${sender}`;
+  msg.innerHTML = `<span>${text}</span>`;
+  chatBox.appendChild(msg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function showTyping(show) {
+  document.getElementById('typingIndicator').style.display = show ? 'block' : 'none';
+}
+
+function showSuggestions() {
+  const input = document.getElementById('userInput').value.toLowerCase();
+  const suggestionsBox = document.getElementById('suggestionsBox');
+  suggestionsBox.innerHTML = '';
+  if (!input) return suggestionsBox.style.display = 'none';
+  healthQuestions.filter(q => q.toLowerCase().includes(input)).forEach(q => {
+    const div = document.createElement('div');
+    div.className = 'suggestion-item';
+    div.textContent = q;
+    div.onclick = () => { document.getElementById('userInput').value = q; suggestionsBox.style.display = 'none'; };
+    suggestionsBox.appendChild(div);
+  });
+  suggestionsBox.style.display = 'block';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+D:/GDSC Hackathon/app/android/app/.cxx/Debug/3y1s5cu1/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/GDSC Hackathon/app/android/app/.cxx/Debug/3y1s5cu1/armeabi-v7a/CMakeFiles/rebuild_cache.dir
