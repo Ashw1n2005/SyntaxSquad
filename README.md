@@ -22,7 +22,7 @@ HealthEd is an AI-driven platform designed to provide personalized health insigh
 
 ### Dependencies
 Ensure the following dependencies are included in `pubspec.yaml`:
-'''
+```
 dependencies:
   flutter:
     sdk: flutter
@@ -39,20 +39,24 @@ dependencies:
   youtube_player_iframe: ^4.0.4
   cloud_firestore: ^5.6.5
   flutter_launcher_icons: ^0.13.1
-'''
+```
 ## Setup & Execution Steps
 
 ### Frontend Setup
 Ensure that you have installed Android Studio or Visual Studio Code with Flutter SDK
 
 1. Clone the repository:
+2. ```
    https://github.com/Ashw1n2005/SyntaxSquad.git
-   
-2. Install dependencies:
+   ```
+3. Install dependencies:
+ ```
    flutter pub get
-   
-3. Run the app:
+   ```
+5. Run the app:
+        ```
    flutter run
+   ```
    
 ### Backend Setup
 1. Set up Firebase project and enable Remote Config.
