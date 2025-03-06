@@ -22,7 +22,7 @@ HealthEd is an AI-driven platform designed to provide personalized health insigh
 
 ### Dependencies
 Ensure the following dependencies are included in `pubspec.yaml`:
-
+'''
 dependencies:
   flutter:
     sdk: flutter
@@ -39,7 +39,7 @@ dependencies:
   youtube_player_iframe: ^4.0.4
   cloud_firestore: ^5.6.5
   flutter_launcher_icons: ^0.13.1
-
+'''
 ## Setup & Execution Steps
 
 ### Frontend Setup
