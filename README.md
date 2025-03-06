@@ -50,11 +50,11 @@ Ensure that you have installed Android Studio or Visual Studio Code with Flutter
    https://github.com/Ashw1n2005/SyntaxSquad.git
    ```
 3. Install dependencies:
- ```
+   ```
    flutter pub get
    ```
 5. Run the app:
-        ```
+   ```
    flutter run
    ```
    
