@@ -1,55 +1,64 @@
 # AI-Powered Health Education App
 
+# Overview
+HealthEd is an AI-driven platform designed to provide personalized health insights and educational content based on user data such as activity, diet, and sleep. The platform consists of both a website and a mobile application, ensuring accessibility and ease of use for users.
+
 ## Code Structure & Dependencies
 
 ### Code Structure
 ```
-/health_edu_ai_app
+/app
 │── /lib
 │   │── main.dart  # Entry point of the Flutter app
-│   │── /screens   # Contains UI screens
-│   │── /services  # AI processing and API calls
-│   │── /models    # Data models for video recommendations
+│   │── /screens   # contains code for basic ui pages
+        |── /datalog #contains code for log entry pages
+        |── /login # contains code for login and sign up pages
+        |── /settings # contains code for setttings pages
+        |── /video # contains code for video player widget
+│   │── /services  # Firebase authentication service and API calls
+│   │── /widgets    # Contains widgets for the app
 │── pubspec.yaml   # Dependency manager for Flutter
-│── README.md      # Project documentation
 ```
 
 ### Dependencies
 Ensure the following dependencies are included in `pubspec.yaml`:
-```yaml
+
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: latest_version
-  firebase_remote_config: latest_version
-  http: latest_version
-  youtube_player_flutter: latest_version
-  provider: latest_version
-  flutter_tts: latest_version
-```
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.17
+  table_calendar: ^3.0.9
+  http: ^1.3.0
+  youtube_player_flutter: ^9.1.1  
+  firebase_core: ^3.12.1
+  firebase_remote_config: ^5.4.2
+  firebase_auth: ^5.5.1
+  flutter_inappwebview: ^6.1.5
+  video_player: ^2.9.3
+  youtube_player_iframe: ^4.0.4
+  cloud_firestore: ^5.6.5
+  flutter_launcher_icons: ^0.13.1
 
 ## Setup & Execution Steps
 
+### Frontend Setup
+Ensure that you have installed Android Studio or Visual Studio Code with Flutter SDK
+
+1. Clone the repository:
+   https://github.com/Ashw1n2005/SyntaxSquad.git
+   
+2. Install dependencies:
+   flutter pub get
+   
+3. Run the app:
+   flutter run
+   
 ### Backend Setup
 1. Set up Firebase project and enable Remote Config.
 2. Store your API keys in Firebase Remote Config.
-3. Train or configure the AI model for video recommendations.
-4. Deploy backend services if required (e.g., Flask/Django for AI processing).
+3. Deploy backend services if required (e.g., Flask/Django for AI processing).
 
-### Frontend Setup
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourrepo/health_edu_ai_app.git
-   cd health_edu_ai_app
-   ```
-2. Install dependencies:
-   ```sh
-   flutter pub get
-   ```
-3. Run the app:
-   ```sh
-   flutter run
-   ```
 
 ## Expected Output and Technical Details
 - AI recommends health-related videos based on user preferences and activity.
@@ -61,10 +70,8 @@ dependencies:
 ## Additional Requirements & Considerations
 - Ensure AI model integration is optimized for mobile inference.
 - Implement user authentication if personalized recommendations are needed.
-- Consider using GraphQL if managing complex queries.
 - Ensure compliance with data privacy regulations for handling health-related data.
 
-For any issues, feel free to raise a ticket or contribute to the repository!
 
 
 
