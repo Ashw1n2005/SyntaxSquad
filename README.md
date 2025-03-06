@@ -46,17 +46,18 @@ dependencies:
 Ensure that you have installed Android Studio or Visual Studio Code with Flutter SDK
 
 1. Clone the repository:
-2. ```
+ ```
    https://github.com/Ashw1n2005/SyntaxSquad.git
    ```
-3. Install dependencies:
+2. Install dependencies:
    ```
    flutter pub get
    ```
-5. Run the app:
+3. Run the app:
    ```
    flutter run
    ```
+   Choose your mobile emulator or Chrome/Microsoft edge for running the app in the devices option which will be asked before running the code.
    
 ### Backend Setup
 1. Set up Firebase project and enable Remote Config.
