@@ -8,7 +8,7 @@ class VideoPage extends StatefulWidget {
 }
 
 class _VideoPageState extends State<VideoPage> {
-  TextEditingController _searchController=new TextEditingController();
+  final TextEditingController _searchController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -71,10 +71,10 @@ class _QuizPageState extends State<QuizPage> {
                         child: QuizQuestion(
                           question: "${index + 1}. ${questions[index]}",
                           answers: [
-                            "${answers[index][0]}",
-                            "${answers[index][1]}",
-                            "${answers[index][2]}",
-                            "${answers[index][3]}",
+                            (answers[index][0]),
+                            (answers[index][1]),
+                            (answers[index][2]),
+                            (answers[index][3]),
                           ],
                           selectedIndex: selectedAnswers[index],
                           onAnswerSelected: (int selectedIndex) {
@@ -95,7 +95,7 @@ class _QuizPageState extends State<QuizPage> {
                     alignment: Alignment.center,
                     child: ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 112, 238, 116)),
+                        backgroundColor: WidgetStateProperty.all(const Color.fromARGB(255, 112, 238, 116)),
                       ),
                       onPressed: () {
                         Navigator.pop(context);

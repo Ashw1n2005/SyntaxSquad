@@ -26,7 +26,7 @@ class _StreakPageState extends State<StreakPage> {
                   width: 300,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.amber)
+                      backgroundColor: WidgetStateProperty.all(Colors.amber)
                     ),
                     onPressed: (){
                               Navigator.push(

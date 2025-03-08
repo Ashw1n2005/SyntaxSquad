@@ -8,7 +8,7 @@ class FirebaseService {
       await _db.collection(collection).add(data);
     } catch (e) {
       print("Error adding document: $e");
-      throw e;
+      rethrow;
     }
   }
 
@@ -18,7 +18,7 @@ class FirebaseService {
       return snapshot.docs.map((doc) => {"id": doc.id, ...doc.data() as Map<String, dynamic>}).toList();
     } catch (e) {
       print("Error fetching documents: $e");
-      throw e;
+      rethrow;
     }
   }
 
@@ -31,7 +31,7 @@ class FirebaseService {
       return null;
     } catch (e) {
       print("Error fetching document: $e");
-      throw e;
+      rethrow;
     }
   }
 
@@ -40,7 +40,7 @@ class FirebaseService {
       await _db.collection(collection).doc(id).update(data);
     } catch (e) {
       print("Error updating document: $e");
-      throw e;
+      rethrow;
     }
   }
 
@@ -49,7 +49,7 @@ class FirebaseService {
       await _db.collection(collection).doc(id).delete();
     } catch (e) {
       print("Error deleting document: $e");
-      throw e;
+      rethrow;
     }
   }
 }

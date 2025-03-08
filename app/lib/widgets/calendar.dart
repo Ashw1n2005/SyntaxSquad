@@ -4,12 +4,14 @@ import 'package:table_calendar/table_calendar.dart';
 
 
 class StreakCalendar extends StatefulWidget {
+  const StreakCalendar({super.key});
+
   @override
   _StreakCalendarState createState() => _StreakCalendarState();
 }
 
 class _StreakCalendarState extends State<StreakCalendar> {
-  CalendarFormat _calendarFormat = CalendarFormat.month;
+  final CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
 

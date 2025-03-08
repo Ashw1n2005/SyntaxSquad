@@ -7,8 +7,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 class YouTubeSearchScreen extends StatefulWidget {
   final List<String> initialHashtags;
 
-  const YouTubeSearchScreen({this.initialHashtags = const ["health"], Key? key})
-      : super(key: key);
+  const YouTubeSearchScreen({this.initialHashtags = const ["health"], super.key});
 
   @override
   _YouTubeSearchScreenState createState() => _YouTubeSearchScreenState();
@@ -149,7 +148,7 @@ class _YouTubeSearchScreenState extends State<YouTubeSearchScreen> {
 
 class YoutubePlayerScreen extends StatelessWidget {
   final String videoId;
-  const YoutubePlayerScreen({required this.videoId, Key? key}) : super(key: key);
+  const YoutubePlayerScreen({required this.videoId, super.key});
 
   @override
   Widget build(BuildContext context) {
